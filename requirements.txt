@@ -1,0 +1,7 @@
+streamlit
+pypdf
+langchain
+langchain-google-genai
+langchain-groq
+langchain-text-splitters
+python-dotenv
