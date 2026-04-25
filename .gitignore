@@ -11,3 +11,4 @@ build/
 *.log
 *.sqlite3
 .streamlit/secrets.toml
+.streamlit/credentials.toml

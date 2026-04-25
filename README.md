@@ -22,9 +22,12 @@ A simple Streamlit app that accepts resumes in PDF and TXT format, extracts the 
 ```text
 Resume/
 |-- app.py
+|-- streamlit_app.py
 |-- requirements.txt
 |-- .gitignore
 |-- README.md
+|-- .streamlit/
+|   `-- config.toml
 `-- src/
     |-- analysis/
     |   |-- analyzer.py
@@ -57,6 +60,12 @@ You can also enter both keys directly inside the app sidebar.
 streamlit run app.py
 ```
 
+You can also run the Streamlit-friendly entry file:
+
+```bash
+streamlit run streamlit_app.py
+```
+
 ## Notes
 
 - The app supports both PDF and TXT resume uploads.
@@ -65,6 +74,23 @@ streamlit run app.py
 - Groq can be used for final analysis, and the app falls back to keyword retrieval when only a Groq key is available.
 - If no API key is provided, the app falls back to a local rule-based analyzer so you can still test the interface and upload flow.
 - After local testing, this folder is ready to push to GitHub and deploy with Streamlit.
+
+## Streamlit Deployment
+
+For Streamlit Community Cloud:
+
+1. Connect the GitHub repository.
+2. Set the main file path to `streamlit_app.py` or `app.py`.
+3. Add secrets in the Streamlit app settings if needed:
+   - `GEMINI_API_KEY`
+   - `GROQ_API_KEY`
+4. Deploy.
+
+The repo already includes:
+
+- `requirements.txt` at the root
+- a root Streamlit entry file
+- `.streamlit/config.toml` for theme and app defaults
 
 ## Troubleshooting
 
